@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import { getCustomers } from "./controllers/customers";
 import customerRouter from "./routes/customer";
+import userRouter from "./routes/user";
 
 require("dotenv").config(); // Load environment variables from a .env file into process.env
 const cors = require("cors"); // Import the CORS middleware
@@ -19,3 +20,4 @@ app.listen(PORT, () => {
 
 // GET REQUEST
 app.use("/api/v1", customerRouter);
+app.use("/api/v1", userRouter);
